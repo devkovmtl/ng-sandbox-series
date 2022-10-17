@@ -29,4 +29,12 @@ export class AppComponent {
   toggleText(): void {
     this.showText = !this.showText;
   }
+
+  onSave(): void {
+    console.log('Click on save');
+  }
+
+  deleteItem(item: string) {
+    console.log(item);
+  }
 }
