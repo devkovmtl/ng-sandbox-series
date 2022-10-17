@@ -23,6 +23,8 @@ export class AppComponent {
   showText = false;
   title = 'angular-series';
 
+  todaysDate = new Date();
+
   toggleText(): void {
     this.showText = !this.showText;
   }

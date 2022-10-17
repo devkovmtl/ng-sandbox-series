@@ -6,3 +6,8 @@
   <button (click)="toggleText()">Toggle</button>
   {{ showText }}
 </div>
+<div>
+  {{ todaysDate | date: "EEEE MMMM d y" | uppercase }}
+  <br />
+  {{ "World" | greeting }}
+</div>

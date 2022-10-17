@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { GreetingPipe } from './greeting.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, ParentComponent, ChildComponent],
+  declarations: [AppComponent, HelloWorldComponent, ParentComponent, ChildComponent, GreetingPipe],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
