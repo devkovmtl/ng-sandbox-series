@@ -5,20 +5,25 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  intervalSub: any;
+export class AppComponent {
+  // intervalSub: any;
 
-  ngOnInit(): void {
-    this.intervalSub = setInterval(() => {
-      console.log('Hello form ngOnInit');
-    }, 1000);
-  }
+  // ngOnInit(): void {
+  //   this.intervalSub = setInterval(() => {
+  //     console.log('Hello form ngOnInit');
+  //   }, 1000);
+  // }
 
-  ngOnDestroy(): void {
-    if (this.intervalSub) {
-      clearInterval(this.intervalSub);
-    }
-  }
+  // ngOnDestroy(): void {
+  //   if (this.intervalSub) {
+  //     clearInterval(this.intervalSub);
+  //   }
+  // }
 
+  showText = false;
   title = 'angular-series';
+
+  toggleText(): void {
+    this.showText = !this.showText;
+  }
 }
