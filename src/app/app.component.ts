@@ -39,4 +39,8 @@ export class AppComponent {
   deleteItem(item: string) {
     console.log(item);
   }
+
+  callPhone(phone: string) {
+    console.log(phone);
+  }
 }

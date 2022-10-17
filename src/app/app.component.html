@@ -22,3 +22,7 @@
   <app-app-sizer [(size)]="fontSizepx"></app-app-sizer>
   <div [style.font-size.px]="fontSizepx">Resizeble text</div>
 </div>
+<div>
+  <input #phone placeholder="Phone" />
+  <button (click)="callPhone(phone.value)">Call</button>
+</div>
