@@ -21,6 +21,7 @@ export class AppComponent {
   // }
 
   showText = false;
+  isCheck = false;
   title = 'angular-series';
 
   todaysDate = new Date();
