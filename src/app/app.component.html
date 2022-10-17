@@ -18,3 +18,7 @@
 <div>
   <app-item-details (deleteRequest)="deleteItem($event)"></app-item-details>
 </div>
+<div>
+  <app-app-sizer [(size)]="fontSizepx"></app-app-sizer>
+  <div [style.font-size.px]="fontSizepx">Resizeble text</div>
+</div>

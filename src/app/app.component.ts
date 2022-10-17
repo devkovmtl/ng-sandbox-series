@@ -26,6 +26,8 @@ export class AppComponent {
 
   todaysDate = new Date();
 
+  fontSizepx = 16;
+
   toggleText(): void {
     this.showText = !this.showText;
   }

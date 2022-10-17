@@ -8,9 +8,10 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { GreetingPipe } from './greeting.pipe';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { AppSizerComponent } from './app-sizer/app-sizer.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, ParentComponent, ChildComponent, GreetingPipe, ItemDetailsComponent],
+  declarations: [AppComponent, HelloWorldComponent, ParentComponent, ChildComponent, GreetingPipe, ItemDetailsComponent, AppSizerComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
