@@ -26,3 +26,8 @@
   <input #phone placeholder="Phone" />
   <button (click)="callPhone(phone.value)">Call</button>
 </div>
+<div>
+  <div [ngClass]="isSpecial ? 'special' : ''">Example</div>
+  <div [ngClass]="currentClasses">Example</div>
+  <div [ngStyle]="currentStyle">Example</div>
+</div>

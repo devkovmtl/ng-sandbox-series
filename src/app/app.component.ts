@@ -8,11 +8,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AppComponent {
   // intervalSub: any;
 
-  // ngOnInit(): void {
-  //   this.intervalSub = setInterval(() => {
-  //     console.log('Hello form ngOnInit');
-  //   }, 1000);
-  // }
+  ngOnInit(): void {
+    // this.intervalSub = setInterval(() => {
+    //   console.log('Hello form ngOnInit');
+    // }, 1000);
+    this.setCurrentClasses();
+    this.setCurrentStyle();
+  }
 
   // ngOnDestroy(): void {
   //   if (this.intervalSub) {
@@ -28,6 +30,10 @@ export class AppComponent {
 
   fontSizepx = 16;
 
+  isSpecial = true;
+  currentClasses = {};
+  currentStyle = {};
+
   toggleText(): void {
     this.showText = !this.showText;
   }
@@ -42,5 +48,20 @@ export class AppComponent {
 
   callPhone(phone: string) {
     console.log(phone);
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      saveable: true,
+      modified: false,
+      special: true,
+    };
+  }
+
+  setCurrentStyle() {
+    this.currentStyle = {
+      'font-style': 'italic',
+      'font-weight': 'bold',
+    };
   }
 }
