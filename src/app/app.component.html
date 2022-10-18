@@ -34,3 +34,14 @@
 <div>
   <p [appHighlight]="'pink'">Highlight directive</p>
 </div>
+<div>
+  <div *ngIf="isActive">Active</div>
+  <div *ngFor="let item of items">
+    <div>∘ {{ item.name }}</div>
+  </div>
+  <div [ngSwitch]="item.name">
+    <div *ngSwitchCase="'Bob'">Hi dad</div>
+    <div *ngSwitchCase="'Monika'">Hi Mom</div>
+    <div *ngSwitchDefault>Hi Friend</div>
+  </div>
+</div>

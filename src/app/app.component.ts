@@ -34,6 +34,17 @@ export class AppComponent {
   currentClasses = {};
   currentStyle = {};
 
+  isActive = false;
+
+  items = [
+    { name: 'banana' },
+    { name: 'apple' },
+    { name: 'citrus' },
+    { name: 'orange' },
+  ];
+
+  item = { name: 'Monika' };
+
   toggleText(): void {
     this.showText = !this.showText;
   }
