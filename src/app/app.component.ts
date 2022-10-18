@@ -6,6 +6,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { LogService } from './log.service';
+import { Pet } from './pet.model';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +44,10 @@ export class AppComponent {
   ];
 
   item = { name: 'Monika' };
+
+  species = ['fish', 'cat', 'dog'];
+  model = new Pet(1, 'Goldie', this.species[0]);
+  submited = false;
 
   constructor(
     private logService: LogService,
@@ -89,5 +94,9 @@ export class AppComponent {
       'font-style': 'italic',
       'font-weight': 'bold',
     };
+  }
+
+  onSubmit() {
+    this.submited = true;
   }
 }

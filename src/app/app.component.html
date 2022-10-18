@@ -1,4 +1,38 @@
-<div>{{ title }}</div>
+<div>
+  <h1>Template Form</h1>
+  <!-- <p>{{ model | json }}</p> -->
+  <div>
+    <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          required
+          [(ngModel)]="model.name"
+          name="name"
+        />
+      </div>
+      <div>
+        <label for="specie">Specie</label>
+        <select name="specie" id="specie" required [(ngModel)]="model.specie">
+          <option *ngFor="let specie of species" [value]="specie">
+            {{ specie }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="!petForm.form.valid">submit</button>
+    </form>
+  </div>
+  <div [hidden]="!submited">
+    <h2>You submited:</h2>
+    <p>Name: {{ model.name }}</p>
+    <p>Specie: {{ model.specie }}</p>
+    <button (click)="submitted = false">Edit</button>
+  </div>
+</div>
+
+<!-- <div>{{ title }}</div>
 <div>
   <app-parent></app-parent>
 </div>
@@ -44,8 +78,9 @@
     <div *ngSwitchCase="'Monika'">Hi Mom</div>
     <div *ngSwitchDefault>Hi Friend</div>
   </div>
-</div>
-<div>
+</div> -->
+
+<!-- <div>
   <h1>Angular router app</h1>
   <nav>
     <ul>
@@ -58,4 +93,4 @@
     </ul>
   </nav>
   <router-outlet></router-outlet>
-</div>
+</div> -->
