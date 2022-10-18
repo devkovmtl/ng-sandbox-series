@@ -1,4 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Renderer2,
+  ElementRef,
+} from '@angular/core';
+import { LogService } from './log.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +14,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class AppComponent {
   // intervalSub: any;
-
-  ngOnInit(): void {
-    // this.intervalSub = setInterval(() => {
-    //   console.log('Hello form ngOnInit');
-    // }, 1000);
-    this.setCurrentClasses();
-    this.setCurrentStyle();
-  }
 
   // ngOnDestroy(): void {
   //   if (this.intervalSub) {
@@ -44,6 +43,22 @@ export class AppComponent {
   ];
 
   item = { name: 'Monika' };
+
+  constructor(
+    private logService: LogService,
+    private renderer: Renderer2,
+    private host: ElementRef
+  ) {}
+
+  ngOnInit(): void {
+    // this.intervalSub = setInterval(() => {
+    //   console.log('Hello form ngOnInit');
+    // }, 1000);
+    this.setCurrentClasses();
+    this.setCurrentStyle();
+    this.logService.logMessage('HEllo from service');
+    this.renderer.setStyle(this.host.nativeElement, 'color', 'red');
+  }
 
   toggleText(): void {
     this.showText = !this.showText;

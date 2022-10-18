@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { LogService } from './log.service';
+
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world.component';
 import { ParentComponent } from './parent/parent.component';
@@ -23,7 +27,7 @@ import { HighlightDirective } from './highlight.directive';
     HighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
