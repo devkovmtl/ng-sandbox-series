@@ -4,6 +4,7 @@ import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { YourGuardGuard } from './your-guard.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: 'second-component',
     component: SecondComponent,
+    canActivate: [YourGuardGuard],
   },
   {
     path: '**',
