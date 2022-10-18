@@ -9,9 +9,19 @@ import { ChildComponent } from './child/child.component';
 import { GreetingPipe } from './greeting.pipe';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, HelloWorldComponent, ParentComponent, ChildComponent, GreetingPipe, ItemDetailsComponent, AppSizerComponent],
+  declarations: [
+    AppComponent,
+    HelloWorldComponent,
+    ParentComponent,
+    ChildComponent,
+    GreetingPipe,
+    ItemDetailsComponent,
+    AppSizerComponent,
+    HighlightDirective,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
