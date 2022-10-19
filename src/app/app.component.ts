@@ -5,6 +5,7 @@ import {
   Renderer2,
   ElementRef,
 } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { LogService } from './log.service';
 import { Pet } from './pet.model';
 
@@ -48,6 +49,12 @@ export class AppComponent {
   species = ['fish', 'cat', 'dog'];
   model = new Pet(1, 'Goldie', this.species[0]);
   submited = false;
+
+  name = new FormControl('');
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
 
   constructor(
     private logService: LogService,
@@ -98,5 +105,10 @@ export class AppComponent {
 
   onSubmit() {
     this.submited = true;
+    console.log(this.profileForm.value);
+  }
+
+  updateName() {
+    this.name.setValue('Nancy');
   }
 }
