@@ -9,6 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { DataService } from './data.service';
 import { LogService } from './log.service';
 import { Pet } from './pet.model';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -57,11 +58,14 @@ export class AppComponent {
     lastName: new FormControl(''),
   });
 
+  isMobile = false;
+
   constructor(
     private logService: LogService,
     private renderer: Renderer2,
     private host: ElementRef,
-    private dataService: DataService
+    private dataService: DataService,
+    private breakpointService: BreakpointObserver
   ) {}
 
   ngOnInit(): void {
@@ -75,6 +79,12 @@ export class AppComponent {
     this.dataService.getData().subscribe((res) => {
       console.log(res);
     });
+
+    this.breakpointService
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
+      .subscribe((result) => {
+        console.log(result);
+      });
   }
 
   toggleText(): void {
