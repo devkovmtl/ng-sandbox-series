@@ -6,6 +6,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DataService } from './data.service';
 import { LogService } from './log.service';
 import { Pet } from './pet.model';
 
@@ -59,7 +60,8 @@ export class AppComponent {
   constructor(
     private logService: LogService,
     private renderer: Renderer2,
-    private host: ElementRef
+    private host: ElementRef,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void {
@@ -70,6 +72,9 @@ export class AppComponent {
     this.setCurrentStyle();
     this.logService.logMessage('HEllo from service');
     this.renderer.setStyle(this.host.nativeElement, 'color', 'red');
+    this.dataService.getData().subscribe((res) => {
+      console.log(res);
+    });
   }
 
   toggleText(): void {

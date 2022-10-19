@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { LogService } from './log.service';
 
@@ -34,7 +35,13 @@ import { ChildBComponent } from './child-b/child-b.component';
     ChildAComponent,
     ChildBComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [LogService],
   bootstrap: [AppComponent],
 })
